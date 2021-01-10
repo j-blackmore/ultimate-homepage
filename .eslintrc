@@ -28,6 +28,8 @@
     "no-const-assign": "error",
     "no-duplicate-imports": "error",
     "no-useless-constructor": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }
