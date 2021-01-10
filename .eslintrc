@@ -1,0 +1,33 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "default-case": "error",
+    "eqeqeq": "error",
+    "yoda": "error",
+    "no-console": "warn",
+    "no-alert": "warn",
+    "no-unused-vars": "error",
+    "no-const-assign": "error",
+    "no-duplicate-imports": "error",
+    "no-useless-constructor": "error",
+    "react/jsx-uses-vars": "error"
+  }
+}

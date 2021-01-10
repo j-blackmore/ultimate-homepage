@@ -1,0 +1,44 @@
+{
+  "name": "ultimate-homepage",
+  "private": true,
+  "version": "0.0.1",
+  "description": "An overly powerful, ultimate homepage",
+  "scripts": {
+    "start": "npm run server:dev",
+    "build:dev": "webpack --mode development",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "server:dev": "webpack serve --mode development "
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-react": "^7.22.0",
+    "html-webpack-plugin": "^4.5.1",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.2",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.12.2",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-blackmore/ultimate-homepage.git"
+  },
+  "author": "j-blackmore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-blackmore/ultimate-homepage/issues"
+  },
+  "homepage": "https://github.com/j-blackmore/ultimate-homepage#readme"
+}
