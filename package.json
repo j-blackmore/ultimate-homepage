@@ -23,6 +23,7 @@
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-webpack-plugin": "^2.4.1",
     "html-webpack-plugin": "^4.5.1",
     "prettier": "^2.2.1",
