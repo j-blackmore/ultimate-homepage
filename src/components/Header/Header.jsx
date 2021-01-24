@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import GoogleSignIn from '../Gmail/GoogleSignIn';
 
 const formatDateLong = (date) =>
   date.toLocaleString('en-GB', {
@@ -11,7 +12,7 @@ const formatDateLong = (date) =>
     year: 'numeric',
   });
 
-const Header = () => {
+const Header = ({onSignIn, credentials}) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const Header = () => {
   return (
     <div className="header">
       <h1 className="current-time">{formatDateLong(time)}</h1>
+      <GoogleSignIn onLoginSuccess={onSignIn} credentials={credentials} />
     </div>
   );
 };
