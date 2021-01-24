@@ -1,3 +1,12 @@
+.google-signedin {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
 .google-signin {
   width: fit-content;
   display: flex;
