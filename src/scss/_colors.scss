@@ -1,2 +1,15 @@
-$primary-color: #102048;
-$text-color: #ffffff;
+$theme-color-900: #102a43;
+$theme-color-800: #243b53;
+$theme-color-700: #334e68;
+$theme-color-600: #486581;
+$theme-color-500: #627d98;
+$theme-color-400: #829ab1;
+$theme-color-300: #9fb3c8;
+$theme-color-200: #bcccdc;
+$theme-color-100: #d9e2ec;
+$theme-color-50: #f0f4f8;
+
+$primary-color: $theme-color-900;
+$text-color: $theme-color-50;
+
+$bg-color: #1f2933;
