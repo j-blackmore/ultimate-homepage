@@ -3,7 +3,7 @@
 ## Current Todo
 
 - [ ] Improve styling on search bars + page
-- [ ] Gmail API integration
+- [x] Gmail API integration
 - [ ] Google Calendar API integration
 - [ ] Spotify API integration
 - [ ] Favourites/Bookmarks

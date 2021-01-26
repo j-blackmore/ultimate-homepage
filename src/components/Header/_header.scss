@@ -1,6 +1,8 @@
 .header {
   padding: 2rem;
   display: flex;
+  width: 100%;
+  height: fit-content;
   justify-content: space-between;
   .current-time {
     margin: 0;
