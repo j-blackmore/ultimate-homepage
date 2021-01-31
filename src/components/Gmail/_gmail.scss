@@ -34,9 +34,15 @@
       flex-direction: column;
       margin-bottom: 0.5rem;
 
-      .name {
-        font-weight: bold;
-        font-size: 20px;
+      .email-header {
+        display: flex;
+        flex-direction: row;
+
+        .name {
+          flex-grow: 1;
+          font-weight: bold;
+          font-size: 20px;
+        }
       }
 
       .email-address {

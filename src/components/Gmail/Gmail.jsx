@@ -91,7 +91,10 @@ const Email = ({email}) => {
   return (
     <div className="email">
       <div className="email-from">
-        <span className="name">{email.from.name}</span>
+        <div className="email-header">
+          <span className="name">{email.from.name}</span>
+          <span className="from-date">{new Date(email.date).toUTCString()}</span>
+        </div>
         <span className="email-address">{email.from.email}</span>
       </div>
       <div className="email-preview">{email.snippet}</div>
