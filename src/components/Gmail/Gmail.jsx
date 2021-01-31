@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import WidgetOverlay from '../Layout/WidgetOverlay';
 
 const fetchEmail = async (authUser, email) => {
   const {userId, accessToken} = authUser;
@@ -57,15 +58,10 @@ const Gmail = ({authUser}) => {
   const [emails, setEmails] = useState([]);
 
   useEffect(() => {
-    console.log('gmail update');
-
     if (!authUser) return;
 
     const fetchEmails = async () => {
       const latestEmails = await fetchLatestEmails(authUser);
-
-      console.log('emails:', latestEmails);
-
       let newEmails = [];
       for (let i = 0; i < latestEmails.length; i++) {
         let nextEmail = await fetchEmail(authUser, latestEmails[i]);
@@ -76,19 +72,19 @@ const Gmail = ({authUser}) => {
     fetchEmails();
   }, [authUser]);
 
-  const emailsToDisplay = 5;
-
   return (
     <div className="gmail">
       {authUser ? (
-        <>
-          <h2>Unread Emails ({emails.length})</h2>
-          {emails.slice(0, emailsToDisplay).map((e, i) => (
-            <Email key={i} email={e} />
-          ))}
-        </>
+        <div className="widget-container">
+          <h2 className="heading">Unread Emails ({emails.length})</h2>
+          <div className="emails">
+            {emails.map((e, i) => (
+              <Email key={i} email={e} />
+            ))}
+          </div>
+        </div>
       ) : (
-        <h2>Log in to view emails</h2>
+        <WidgetOverlay>Login to view emails</WidgetOverlay>
       )}
     </div>
   );
