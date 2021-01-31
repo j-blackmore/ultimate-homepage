@@ -33,13 +33,10 @@ const transformEmailResponse = (emailRes) => {
     let stripEmailRegex = /<[^>]*>|"/g;
 
     let emailMatches = from.match(emailAdrRegex);
-    let emailAdr = emailMatches?.lenth >= 1 ? emailMatches[1] : '';
+    let emailAdr = emailMatches && emailMatches?.length >= 2 ? emailMatches[1] : '';
     let name = from.replace(stripEmailRegex, '');
 
-    return {
-      name: name,
-      email: emailAdr,
-    };
+    return {name: name, email: emailAdr};
   };
 
   // TODO - Decode the message body
