@@ -5,11 +5,14 @@ import YoutubeLogo from '../../assets/images/youtube-logo.png';
 
 const searchConfig = [
   {
+    id: 'google-search',
     placeholder: 'Search Google',
     queryUrl: 'http://google.com/search?q=',
     logoSrc: GoogleLogo,
+    focus: true,
   },
   {
+    id: 'youtube-search',
     placeholder: 'Search Youtube',
     queryUrl: 'http://youtube.com/search?q=',
     logoSrc: YoutubeLogo,
@@ -19,8 +22,8 @@ const searchConfig = [
 const SearchBars = () => {
   return (
     <div className="search-bars">
-      {searchConfig.map((x, i) => (
-        <SearchBar key={i} placeholder={x.placeholder} queryUrl={x.queryUrl} logoSrc={x.logoSrc} />
+      {searchConfig.map((x) => (
+        <SearchBar key={x.id} {...x} />
       ))}
     </div>
   );

@@ -4,7 +4,7 @@ const openInNewWindow = (url) => {
   window.open(url);
 };
 
-const SearchBar = ({queryUrl, placeholder, logoSrc}) => {
+const SearchBar = ({queryUrl, placeholder, logoSrc, focus = false}) => {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e) => {
@@ -23,6 +23,7 @@ const SearchBar = ({queryUrl, placeholder, logoSrc}) => {
       <div className="search-logo">{logoSrc && <img src={logoSrc} />}</div>
       <input
         type="text"
+        autoFocus={Boolean(focus)}
         value={input}
         onChange={handleInputChange}
         placeholder={placeholder}
