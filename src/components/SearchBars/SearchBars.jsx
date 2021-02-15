@@ -6,12 +6,12 @@ import YoutubeLogo from '../../assets/images/youtube-logo.png';
 const searchConfig = [
   {
     placeholder: 'Search Google',
-    queryUrl: 'http://google.com/search?=',
+    queryUrl: 'http://google.com/search?q=',
     logoSrc: GoogleLogo,
   },
   {
     placeholder: 'Search Youtube',
-    queryUrl: 'http://youtube.com/search?=',
+    queryUrl: 'http://youtube.com/search?q=',
     logoSrc: YoutubeLogo,
   },
 ];
