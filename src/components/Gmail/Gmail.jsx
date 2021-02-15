@@ -53,18 +53,20 @@ const transformEmailResponse = (emailRes) => {
 
 const Gmail = ({authUser}) => {
   const [emails, setEmails] = useState([]);
+  const [emailCount, setEmailCount] = useState(0);
 
   useEffect(() => {
     if (!authUser) return;
 
     const fetchEmails = async () => {
       const latestEmails = await fetchLatestEmails(authUser);
+      setEmailCount(latestEmails.length);
       let newEmails = [];
       for (let i = 0; i < latestEmails.length; i++) {
         let nextEmail = await fetchEmail(authUser, latestEmails[i]);
         newEmails.push(transformEmailResponse(nextEmail));
+        setEmails([...newEmails]);
       }
-      setEmails(newEmails);
     };
     fetchEmails();
   }, [authUser]);
@@ -73,10 +75,10 @@ const Gmail = ({authUser}) => {
     <div className="gmail">
       {authUser ? (
         <div className="widget-container">
-          <h2 className="heading">Unread Emails ({emails.length})</h2>
+          <h2 className="heading">Unread Emails ({emailCount})</h2>
           <div className="emails">
-            {emails.map((e, i) => (
-              <Email key={i} email={e} />
+            {emails.map((e) => (
+              <Email key={e.id} email={e} />
             ))}
           </div>
         </div>
