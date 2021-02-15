@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useCallback} from 'react';
 import GoogleLogo from '../../assets/images/google-logo.png';
 
 const getAuthUser = (res) => {
@@ -35,7 +35,7 @@ const GoogleSignIn = ({onLoginSuccess, credentials}) => {
   const [authLoaded, setAuthLoaded] = useState(false);
   const [authUser, setAuthUser] = useState(false);
 
-  const handleLogin = async () => {
+  const handleLogin = useCallback(async () => {
     const loadSuccesful = await initGoogleAuthApi(credentials);
     if (!loadSuccesful) {
       return;
@@ -43,7 +43,7 @@ const GoogleSignIn = ({onLoginSuccess, credentials}) => {
     const authUser = await signIn();
     onLoginSuccess(authUser);
     setAuthUser(authUser);
-  };
+  }, [credentials, onLoginSuccess]);
 
   useEffect(() => {
     if (window.gapi === undefined) {
@@ -53,8 +53,9 @@ const GoogleSignIn = ({onLoginSuccess, credentials}) => {
 
     window.gapi.load('auth2', () => {
       setAuthLoaded(true);
+      handleLogin();
     });
-  }, []);
+  }, [handleLogin]);
 
   return authUser ? (
     <span className="google-signedin">
